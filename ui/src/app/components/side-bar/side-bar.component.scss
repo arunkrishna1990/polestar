@@ -1,0 +1,57 @@
+:host {
+  display: block;
+}
+
+aside {
+  height: 100%;
+}
+
+.sidebar {
+  z-index: 205;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 60px;
+  height: 100%;
+  width: 60px;
+  color: #fff;
+  background-color: rgb(41, 51, 58);
+
+  .sidebar-items-wrapper {
+    margin-top: 70px;
+
+    .sidebar-item {
+      font-size: 20px;
+      position: relative;
+      display: flex;
+      min-height: 30px;
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+      height: 40px;
+
+      &.selected {
+        cursor: default;
+        border-left: 2px solid #0bde78;
+
+        i {
+          color: #0bde78;
+        }
+      }
+
+      a {
+        display: block;
+        overflow: hidden;
+        position: relative;
+        padding: 10px 20px;
+
+        i {
+          position: relative;
+          float: left;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}

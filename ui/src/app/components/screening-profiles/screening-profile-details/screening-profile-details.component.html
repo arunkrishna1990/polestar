@@ -1,0 +1,36 @@
+<div class="wrapper" *ngIf="screeningProfile">
+  <div class="header">
+    <h4>{{screeningProfile.name}}</h4>
+    <div class="date-wrapper">
+      <div class="date-item">
+        <span class="title">Created</span>
+        <span>{{screeningProfile.created | date:'mediumDate'}}</span>
+      </div>
+      <div class="date-item">
+        <span class="title">Modified</span>
+        <span>{{screeningProfile.modified | date:'mediumDate'}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="content-wrapper">
+    <mat-accordion>
+      <mat-expansion-panel *ngFor="let profilePanel of screeningProfile.expansionPanel">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{profilePanel.panelHeader | uppercase}}
+          </mat-panel-title>
+          <mat-panel-description>
+            Details around {{profilePanel.panelHeader|lowercase}} carried out.
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-list *ngFor="let item of profilePanel.panelItems">
+          <mat-list-item>
+            <span class="display-text"> {{item.displayText}}</span>
+            <span class="display-value">{{item.value}}</span>
+            <mat-divider></mat-divider>
+          </mat-list-item>
+        </mat-list>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</div>

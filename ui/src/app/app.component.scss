@@ -1,0 +1,15 @@
+:host {
+  display: flex;
+  height: 100%;
+}
+
+sidebar {
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.router-container {
+  flex-grow: 1;
+  position: relative;
+  z-index: 1;
+}

@@ -1,0 +1,75 @@
+@import '../../../../scss/colours';
+
+:host {
+  background: #eeeeee;
+
+  .content-wrapper,
+  .header {
+    position: relative;
+    width: 100%;
+    float: left;
+  }
+
+  .header {
+    box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px #e55d6a;
+    background: linear-gradient(60deg,#ef5350,#e53935);
+    height: 60px;
+
+    & > * {
+      position: absolute;
+    }
+
+    h4 {
+      font-size: 1.125rem;
+      line-height: 30px;
+      font-weight: 300;
+      margin-left: 1rem;
+      padding: .625rem 0;
+      color: $white;
+      left: 0;
+    }
+
+    .date-wrapper {
+      right: 20px;
+      color: $white;
+      font-size: 13px;
+      font-weight: 300;
+
+      .date-item {
+        position: relative;
+        float: left;
+        padding: 10px;
+
+        .title {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  .content-wrapper {
+    margin: 10px;
+    max-height: 90vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    .mat-expansion-panel{
+      background: transparent;
+      box-shadow: none;
+    }
+    .mat-list-item {
+      .display-text,
+      .display-value {
+        font-size: 13px;
+        position: absolute;
+      }
+
+      .display-text {
+        left: 20px;
+      }
+
+      .display-value {
+        right: 20px;
+      }
+    }
+  }
+}

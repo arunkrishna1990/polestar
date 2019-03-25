@@ -1,0 +1,118 @@
+@import '../../../../scss/colours';
+
+:host {
+  .filter-wrapper {
+    padding: 0;
+    margin: 10px;
+    box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px #e55d6a;
+    background: linear-gradient(60deg, #e55d6a, #c13244);
+    position: relative;
+    color: #303b54;
+
+    .filter-bar {
+      display: flex;
+      align-items: center;
+      flex-flow: row nowrap;
+      height: 40px;
+      transition: background-color .2s,color .2s;
+      padding: 10px 10px 10px 0;
+
+      i,
+      input {
+        position: relative;
+        float: left;
+      }
+
+      i {
+        padding: 10px;
+      }
+
+      input {
+        flex-grow: 1;
+        height: 100%;
+        outline: 0;
+        border: none;
+        border-radius: 4px;
+        background: hsla(0,0%,100%,.08);
+        color: #fff;
+        transition: background-color .2s,color .2s;
+        padding-left: 15px;
+        widows: 100%;
+
+        &:focus {
+          background: #ebeef5;
+          color: black;
+        }
+      }
+
+    }
+
+    .filter-container {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      padding: 10px;
+
+      .filter-item,
+      button,
+      span {
+        position: relative;
+        float: left;
+      }
+
+      span {
+        margin: 15px 0;
+      }
+
+      .country-severity-check-filter {
+        border: none;
+        border-radius: 4px;
+        background: rgba(255, 255, 255, 0.08);
+        transition: background-color .2s,color .2s;
+        position: relative;
+        float: left;
+        padding-left: 50px;
+        padding-right: 50px;
+        margin-left: 20px;
+
+        .filter-item {
+          transition: background-color .2s,color .2s;
+          cursor: pointer;
+          padding: 5px;
+          margin: 0 30px;
+          color: $white;
+
+          &.critical {
+            &:hover,
+            &.selected {
+              color: $red;
+            }
+          }
+
+          &.warning {
+            &:hover,
+            &.selected {
+              color: $orange;
+            }
+          }
+
+          &.ok {
+            &:hover,
+            &.selected {
+              color: $green;
+            }
+          }
+
+          &.unknown {
+            &:hover,
+            &.selected {
+              color: $yellow;
+            }
+          }
+        }
+      }
+    }
+  }
+}

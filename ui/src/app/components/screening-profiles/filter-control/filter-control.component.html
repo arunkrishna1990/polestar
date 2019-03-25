@@ -1,0 +1,26 @@
+<mat-card class='filter-wrapper'>
+  <div class="filter-bar" [ngStyle]="{'opacity': showFilter ? 0 :1}">
+    <i class="fas fa-search"></i>
+    <input matInput id="filter" type="text" autocomplete="off" placeholder="Filter by name" />
+    <button mat-icon-button (click)="toggleFilter()">
+      <mat-icon>filter_list</mat-icon>
+    </button>
+  </div>
+  <div class="filter-container" *ngIf="showFilter">
+    <button mat-icon-button (click)="toggleFilter()">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <span>FILTER BY </span>
+    <ul class="country-severity-check-filter">
+      <li *ngFor="let item of filters" class="filter-item {{item.filterType}}" [matTooltip]="item.filterType|uppercase"
+        matTooltipShowDelay="300" matTooltipPosition="above" [ngSwitch]="item.filterType"
+        (click)="toggleCountryCheckSeverityFilter(item)"
+        [ngClass]="{'selected': item.selected}">
+        <mat-icon *ngSwitchCase="'critical'" class="fas fa-exclamation-circle"></mat-icon>
+        <mat-icon *ngSwitchCase="'warning'">warning</mat-icon>
+        <mat-icon *ngSwitchCase="'ok'">check_circle</mat-icon>
+        <mat-icon *ngSwitchCase="'unknown'" class="far fa-question-circle unknown"></mat-icon>
+      </li>
+    </ul>
+  </div>
+</mat-card>

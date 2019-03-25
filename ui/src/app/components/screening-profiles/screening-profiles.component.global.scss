@@ -1,0 +1,15 @@
+.screening-profiles-details {
+  max-height: 100vh;
+  pointer-events: auto;
+  position: absolute !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 55%;
+
+  .mat-dialog-container {
+    background: #eee;
+    padding: 0 !important;
+    overflow: hidden;
+  }
+}

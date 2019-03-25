@@ -1,0 +1,60 @@
+@import '../../../scss/mixin';
+@import '../../../scss/colours';
+
+:host {
+  @include routerLayout();
+  transition: all .2s,color .2s;
+
+  h4 {
+    position: relative;
+    font-size: 1.125rem;
+    line-height: 30px;
+    font-weight: 300;
+    margin-left: 1rem;
+    padding: .625rem 0;
+    color: #9c27b0;
+  }
+
+  .wrapper {
+    position: relative;
+    flex-grow: 1;
+    padding: 0 20px 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    table {
+      width: 100%;
+      background: transparent;
+
+      .mat-row {
+        cursor: pointer;
+        background: #fff;
+        transition: background-color .2s,color .2s;
+      }
+
+      .mat-row:hover {
+        background: transparent;
+      }
+
+      .mat-icon {
+        &.critical {
+          color: $red;
+        }
+
+        &.warning {
+          color: $orange;
+        }
+
+        &.ok {
+          color: $green;
+        }
+
+        &.unknown {
+          color: $yellow;
+        }
+      }
+    }
+  }
+
+}
+
